@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/wordsFromPicture/static/css/main.8b650ec4.css",
+    "main.js": "/wordsFromPicture/static/js/main.e00dac05.js",
+    "static/media/photo_11_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_11_2024-08-25_12-46-06.af52ed13291346a1fef8.jpg",
+    "static/media/photo_18_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_18_2024-08-25_12-46-06.5d92dbab01ddffbec8d6.jpg",
+    "static/media/photo_10_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_10_2024-08-25_12-46-06.efe2bc54883d9fc389cf.jpg",
+    "static/media/photo_7_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_7_2024-08-25_12-46-06.45efade1eecb06c9d871.jpg",
+    "static/media/photo_4_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_4_2024-08-25_12-46-06.1abff4b078e2af904346.jpg",
+    "static/media/photo_23_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_23_2024-08-25_12-46-06.25090e71a7f29e025259.jpg",
+    "static/media/photo_14_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_14_2024-08-25_12-46-06.7947cc3ed41e1ad73432.jpg",
+    "static/media/photo_15_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_15_2024-08-25_12-46-06.5ef5f351e6b056e4b02c.jpg",
+    "static/media/photo_16_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_16_2024-08-25_12-46-06.361cba102885129fb1b9.jpg",
+    "static/media/photo_2_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_2_2024-08-25_12-46-06.0e4b2fda281fd8dffa9b.jpg",
+    "static/media/photo_12_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_12_2024-08-25_12-46-06.12c6fad9de5a9dd2e643.jpg",
+    "static/media/photo_9_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_9_2024-08-25_12-46-06.d5016428894c4cdf6b32.jpg",
+    "static/media/photo_3_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_3_2024-08-25_12-46-06.b061f97eced71d4645f7.jpg",
+    "static/media/photo_20_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_20_2024-08-25_12-46-06.81d430ceeb33a5a6ad2c.jpg",
+    "static/media/photo_17_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_17_2024-08-25_12-46-06.c686f6ec12dc0038723c.jpg",
+    "static/media/photo_13_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_13_2024-08-25_12-46-06.2e436ce8fc4002666c1b.jpg",
+    "static/media/photo_6_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_6_2024-08-25_12-46-06.9404ca4f75f71d1b115c.jpg",
+    "static/media/photo_8_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_8_2024-08-25_12-46-06.fb919a12826c305c9169.jpg",
+    "static/media/photo_22_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_22_2024-08-25_12-46-06.90a060a7f522df8123c8.jpg",
+    "static/media/photo_21_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_21_2024-08-25_12-46-06.ef48f72bdd2298d1e3cf.jpg",
+    "static/media/photo_1_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_1_2024-08-25_12-46-06.b68f760df9d027e5433a.jpg",
+    "static/media/photo_19_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_19_2024-08-25_12-46-06.8e6e8c283dec4a2d48b4.jpg",
+    "static/media/photo_5_2024-08-25_12-46-06.jpg": "/wordsFromPicture/static/media/photo_5_2024-08-25_12-46-06.9c157f0cf0f985dc67e3.jpg",
+    "static/media/levelComplete.gif": "/wordsFromPicture/static/media/levelComplete.f30bfd7934e20d4dff26.gif",
+    "static/media/accuracy.svg": "/wordsFromPicture/static/media/accuracy.1670f10e13127f91668db5b36477f604.svg",
+    "static/media/streak.svg": "/wordsFromPicture/static/media/streak.678fe079e05031aaec57e991553c0901.svg",
+    "static/media/score.svg": "/wordsFromPicture/static/media/score.9086c706f633c5d586b45cde1f834da3.svg",
+    "index.html": "/wordsFromPicture/index.html",
+    "main.8b650ec4.css.map": "/wordsFromPicture/static/css/main.8b650ec4.css.map",
+    "main.e00dac05.js.map": "/wordsFromPicture/static/js/main.e00dac05.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b650ec4.css",
+    "static/js/main.e00dac05.js"
+  ]
+}
