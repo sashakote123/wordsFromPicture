@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { addError, clearErrors } from "../../../store/accuracySlice";
 import { addStreak, breakStreak } from "../../../store/streakSlice";
-import { randomInteger, shuffleArray } from "../../../helpers/methods";
+import { generateArray, randomInteger, shuffleArray } from "../../../helpers/methods";
 import { updateCurrentWord } from "../../../store/initialShufflesSlice";
 import LevelComplete from "./../../common/LevelComplete";
 import KUTE from 'kute.js';
@@ -13,15 +13,6 @@ let tmpArray = [{ translate: null }, { translate: null }, { translate: null }, {
 
 let i = 0;
 
-const generateArray = (i, wordsArray) => {
-    let indexesArray = [i];
-    while (indexesArray.length !== 4) {
-        let tmpInd = randomInteger(0, wordsArray.length - 1)
-        if (tmpInd !== i) indexesArray.push(tmpInd)
-    }
-    indexesArray = shuffleArray(indexesArray);
-    return [wordsArray[indexesArray[0]], wordsArray[indexesArray[1]], wordsArray[indexesArray[2]], wordsArray[indexesArray[3]]]
-}
 
 const WordFromPictureBoard = () => {
 

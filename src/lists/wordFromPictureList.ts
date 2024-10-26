@@ -23,8 +23,28 @@ import img21 from './../images/wfp/photo_17_2024-08-25_12-46-06.jpg';
 import img22 from './../images/wfp/photo_8_2024-08-25_12-46-06.jpg';
 import img23 from './../images/wfp/photo_15_2024-08-25_12-46-06.jpg';
 
+import img2_1 from './../images/wfp/Verb/photo_1_2024-10-26_17-39-46.jpg';
+import img2_2 from './../images/wfp/Verb/photo_1_2024-10-26_17-41-56.jpg';
+import img2_3 from './../images/wfp/Verb/photo_2_2024-10-26_17-39-46.jpg';
+import img2_4 from './../images/wfp/Verb/photo_2_2024-10-26_17-41-56.jpg';
+import img2_5 from './../images/wfp/Verb/photo_3_2024-10-26_17-39-46.jpg';
+import img2_6 from './../images/wfp/Verb/photo_3_2024-10-26_17-41-56.jpg';
+import img2_7 from './../images/wfp/Verb/photo_4_2024-10-26_17-39-46.jpg';
+import img2_8 from './../images/wfp/Verb/photo_4_2024-10-26_17-41-56.jpg';
+import img2_9 from './../images/wfp/Verb/photo_5_2024-10-26_17-39-46.jpg';
+import img2_10 from './../images/wfp/Verb/photo_6_2024-10-26_17-39-46.jpg';
+import img2_11 from './../images/wfp/Verb/photo_7_2024-10-26_17-39-46.jpg';
+import img2_12 from './../images/wfp/Verb/photo_8_2024-10-26_17-39-46.jpg';
+
+
+import { IList } from '../types/types';
+
 // Массив объектов
-export const wordFromPictureList = [
+
+
+
+
+export const wordFromPictureList: Array<IList> = [
     {
         theme: 'Ванная',
         array: [
@@ -51,6 +71,26 @@ export const wordFromPictureList = [
             { id: Math.random(), image: img21, translate: 'ва́нна' },
             { id: Math.random(), image: img22, translate: 'ра́ковина' },
             { id: Math.random(), image: img23, translate: 'зе́ркало' },
+        ]
+    },
+
+
+    {
+        theme: 'Глаголы',
+        array: [
+            { id: Math.random(), image: img2_1, translate: 'слу́шать' },
+            { id: Math.random(), image: img2_2, translate: 'ду́мать' },
+            { id: Math.random(), image: img2_3, translate: 'рабо́тать' },
+            { id: Math.random(), image: img2_4, translate: 'знать' },
+            { id: Math.random(), image: img2_5, translate: 'гуля́ть' },
+            { id: Math.random(), image: img2_6, translate: 'ку́шать' },
+            { id: Math.random(), image: img2_7, translate: 'отдыха́ть' },
+            { id: Math.random(), image: img2_8, translate: 'понима́ть' },
+            { id: Math.random(), image: img2_9, translate: 'игра́ть' },
+            { id: Math.random(), image: img2_10, translate: 'изуча́ть' },
+            { id: Math.random(), image: img2_11, translate: 'де́лать' },
+            { id: Math.random(), image: img2_12, translate: 'чита́ть' },
+
         ]
     }
 ];

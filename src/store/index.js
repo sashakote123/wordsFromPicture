@@ -8,7 +8,6 @@ import initialShufflesSlice from "./initialShufflesSlice";
 
 import cardWordSlice from "./cardWordSlice";
 
-
 export default configureStore({
     reducer: {
         word: cardWordSlice,

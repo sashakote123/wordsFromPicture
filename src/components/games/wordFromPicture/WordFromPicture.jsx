@@ -5,12 +5,16 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { changeTheme } from "../../../store/currentThemeSlice";
 import { wordFromPictureList } from "../../../lists/wordFromPictureList";
+import { Route, Routes, useLocation, useParams } from "react-router-dom";
 
 const WordFromPicture = () => {
 
 
     const dispatch = useDispatch();
-    const obj = wordFromPictureList[0]
+    const { index } = useParams()
+    const obj = wordFromPictureList[index]
+
+
 
     useEffect(() => {
 
@@ -19,11 +23,8 @@ const WordFromPicture = () => {
     }, [dispatch, obj])
 
     return (
-        <div className="container">
-            {/* <WordFromPictureHeader /> */}
-            <WordFromPictureBoard />
-        </div>
 
+        <WordFromPictureBoard />
     );
 }
 
