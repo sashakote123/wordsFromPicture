@@ -2,11 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { addError, clearErrors } from "../../../store/accuracySlice";
 import { addStreak, breakStreak } from "../../../store/streakSlice";
-import { generateArray, randomInteger, shuffleArray } from "../../../helpers/methods";
+import { generateArray, shuffleArray } from "../../../helpers/methods";
 import { updateCurrentWord } from "../../../store/initialShufflesSlice";
 import LevelComplete from "./../../common/LevelComplete";
 import KUTE from 'kute.js';
-import WordFromPictureHeader from "./WordFromPictureHeader";
 
 import { useSpring, animated } from "@react-spring/web";
 
