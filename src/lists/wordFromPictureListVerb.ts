@@ -22,6 +22,7 @@ import { IList } from '../types/types';
 
 export const wordFromPictureListVerb: Array<IList> = [
     {
+        id: 2,
         theme: 'Глаголы',
         array: [
             { id: Math.random(), image: img1, translate: 'слу́шать' },

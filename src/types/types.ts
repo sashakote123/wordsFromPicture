@@ -5,6 +5,20 @@ export interface ICard {
 }
 
 export interface IList {
-    theme: string,
+    id: number,
+    theme: string | null,
     array: Array<ICard>
+}
+
+export interface ICounterState {
+    streak: number
+}
+
+export interface IAccuracyState {
+    errors: number
+}
+
+
+export interface ICurrentWord {
+    currentWord: string | null
 }

@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { IAccuracyState } from '../types/types.js'
 
+const initialState: IAccuracyState = {
+    errors: 0
+}
 
 const accuracySlice = createSlice({
     name: 'accuracy',
-    initialState: {
-        errors: 0,
-    },
+    initialState: initialState,
     reducers: {
         addError(state) {
             state.errors++;

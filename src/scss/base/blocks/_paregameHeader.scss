@@ -1,18 +1,20 @@
 .paregame__header {
     padding: 20px;
-    margin-top: -50px;
-    margin-bottom: 20px;
+    //margin-top: -50px;
+    //margin-bottom: 20px;
+    @media screen and (max-height: 730px) {
+        padding: 10px;
+      }
 }
 .header__heading {
+    margin-top: 15px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-.heading__cancel {
-    cursor: pointer;
 
-    img {
-        @include iconSize;
-    }
+.heading__button{
+    cursor: pointer;
 }
 
 .heading__timer {
@@ -32,8 +34,7 @@
     color: $font-color-dark;
 }
 
-.header__title {
-    margin-top: 15px;
+.heading__title {
 
     font-weight: 700;
     font-size: 22px;

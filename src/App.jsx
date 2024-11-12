@@ -7,14 +7,10 @@ function App() {
 
 
   return (
-    <div className="App">
       <Routes>
-      <Route path="/" element={<Navigate to="/content/0" />} />
-        <Route path='/content/:index' element={<WordFromPicture />} />
+      <Route path="/" element={<Navigate to="/0" />} />
+        <Route path='/:index' element={<WordFromPicture />} />
       </Routes>
-
-
-    </div>
   );
 }
 

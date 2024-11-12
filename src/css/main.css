@@ -13,7 +13,9 @@
 }
 
 /* Links */
-a, a:link, a:visited {
+a,
+a:link,
+a:visited {
   text-decoration: none;
 }
 
@@ -22,16 +24,28 @@ a:hover {
 }
 
 /* Common */
-aside, nav, footer, header, section, main {
+aside,
+nav,
+footer,
+header,
+section,
+main {
   display: block;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   font-size: inherit;
   font-weight: inherit;
 }
 
-ul, ul li {
+ul,
+ul li {
   list-style: none;
 }
 
@@ -39,7 +53,8 @@ img {
   vertical-align: top;
 }
 
-img, svg {
+img,
+svg {
   max-width: 100%;
   height: auto;
 }
@@ -49,7 +64,10 @@ address {
 }
 
 /* Form */
-input, textarea, button, select {
+input,
+textarea,
+button,
+select {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -60,7 +78,8 @@ input::-ms-clear {
   display: none;
 }
 
-button, input[type=submit] {
+button,
+input[type=submit] {
   display: inline-block;
   box-shadow: none;
   background-color: transparent;
@@ -68,8 +87,10 @@ button, input[type=submit] {
   cursor: pointer;
 }
 
-input:focus, input:active,
-button:focus, button:active {
+input:focus,
+input:active,
+button:focus,
+button:active {
   outline: none;
 }
 
@@ -284,10 +305,9 @@ body {
   text-align: center;
   color: #fff;
   background: #8b5aac;
-  padding: 16px 0;
-  width: 100%;
+  margin: 0 15px;
+  width: calc(-30px + 100%);
   height: 50px;
-  min-width: 150px;
   transition: all 0.1s ease-in;
 }
 .mainbtn::after {
@@ -316,21 +336,22 @@ body {
 
 .paregame__header {
   padding: 20px;
-  margin-top: -50px;
-  margin-bottom: 20px;
+}
+@media screen and (max-height: 730px) {
+  .paregame__header {
+    padding: 10px;
+  }
 }
 
 .header__heading {
+  margin-top: 15px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.heading__cancel {
+.heading__button {
   cursor: pointer;
-}
-.heading__cancel img {
-  height: 24px;
-  width: 24px;
 }
 
 .heading__timer {
@@ -350,8 +371,7 @@ body {
   color: #3c3c3c;
 }
 
-.header__title {
-  margin-top: 15px;
+.heading__title {
   font-weight: 700;
   font-size: 22px;
   line-height: 142%;
@@ -378,23 +398,34 @@ body {
 }
 
 .wfp-board {
-  position: relative;
+  position: absolute;
   display: flex;
+  min-height: calc(100% - 150px);
+  max-width: 500px;
+  width: 100%;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+}
+@media screen and (max-height: 730px) {
+  .wfp-board {
+    min-height: calc(100% - 100px);
+  }
+}
+
+.game-container {
+  overflow: hidden !important;
 }
 
 .wpf__image {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 15px 0px;
   width: 220px;
   height: 220px;
 }
 
 .wpf__choice {
-  margin-bottom: 44px;
   display: grid;
   grid-template-columns: 2fr 2fr;
   gap: 15px;
@@ -428,18 +459,17 @@ body {
   position: absolute;
   width: 100%;
   left: 0;
-  top: 450px;
+  top: calc(100% - 160px);
   z-index: 1000;
 }
 
 .btn__wrapper {
   position: relative;
   display: block;
-  top: 0px;
   width: 100%;
   height: 150px;
   border-radius: 16px;
-  background-color: #E7E1EF;
+  background-color: #e7e1ef;
 }
 
 .wrapper__text {
@@ -456,4 +486,62 @@ body {
 }
 .special-btn:focus {
   top: calc(100% - 95px);
+}
+
+.menu__darkness {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.5;
+  transition: all ease-in 0.3s;
+}
+
+.left {
+  left: 100% !important;
+}
+
+.menu__list {
+  position: fixed;
+  left: 100%;
+  top: 0;
+  z-index: 3;
+  height: 100%;
+  width: 500px;
+  background-color: rgb(255, 255, 255);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  transition: all ease-in 0.3s;
+}
+@media screen and (max-width: 650px) {
+  .menu__list {
+    width: 300px;
+  }
+}
+
+.list__item {
+  margin: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  height: 60px;
+  box-shadow: 0 2px 0 0 #e5e5e5;
+  background-color: #fff !important;
+}
+.list__item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 83%;
+  color: #4b4b4b !important;
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=main.css.map */

@@ -1,22 +1,31 @@
 .wfp-board {
-    position: relative;
+    position: absolute;
     display: flex;
+    min-height: calc(100% - 150px);
+    max-width: 500px;
+    width: 100%;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    //gap: 35px;
+    @media screen and (max-height: 730px) {
+        min-height: calc(100% - 100px);
+    }
 }
 .game-container {
+    overflow: hidden !important; 
 }
 .wpf__image {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15px 0px;
+    //margin: 15px 0px;
 
     width: 220px;
     height: 220px;
 }
 .wpf__choice {
-    margin-bottom: 44px;
+    //margin-bottom: 44px;
     display: grid;
 
     grid-template-columns: 2fr 2fr;
@@ -51,7 +60,7 @@
     position: absolute;
     width: 100%;
     left: 0;
-    top: 450px;
+    top: calc(100% - 160px);
 
     z-index: 1000;
 }
@@ -59,12 +68,12 @@
 .btn__wrapper {
     position: relative;
     display: block;
-    top: 0px;
+    //top: 0;
     width: 100%;
     height: 150px;
     border-radius: 16px;
     //background-color: $main-green-color;
-    background-color: #E7E1EF;
+    background-color: #e7e1ef;
 }
 
 .wrapper__text {

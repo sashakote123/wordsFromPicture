@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const LevelComplete = () => {
 
-    const themeArray = useSelector(state => state.theme.theme.array);
+    const themeArray = useSelector(state => state.theme.array);
 
     const errors = useSelector(state => state.accuracy.errors)
 

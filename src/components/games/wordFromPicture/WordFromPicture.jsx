@@ -23,8 +23,11 @@ const WordFromPicture = () => {
     }, [dispatch, obj])
 
     return (
+        <div className="game-container">
+            <WordFromPictureHeader />
+            <WordFromPictureBoard />
+        </div>
 
-        <WordFromPictureBoard />
     );
 }
 

@@ -8,6 +8,8 @@ import LevelComplete from "./../../common/LevelComplete";
 import KUTE from 'kute.js';
 import WordFromPictureHeader from "./WordFromPictureHeader";
 
+import { useSpring, animated } from "@react-spring/web";
+
 
 let tmpArray = [{ translate: null }, { translate: null }, { translate: null }, { translate: null },]
 
@@ -16,7 +18,9 @@ let i = 0;
 
 const WordFromPictureBoard = () => {
 
-    const themeArray = useSelector(state => state.theme.theme.array);
+    const [i, setI] = useState(0)
+
+    const themeArray = useSelector(state => state.theme.array);
     const currentWord = useSelector(state => state.initialShufflesSlice.currentWord);
 
 
@@ -70,16 +74,40 @@ const WordFromPictureBoard = () => {
     var tween5 = KUTE.fromTo(ref3.current, { translate3d: [0, 250, 0] }, { translate3d: [0, 0, 0] }, { duration: 200 });
 
     const btn = useRef()
+
+
+    const [isShaking, setIsShaking] = useState(false);
+    const shakeAnimation = useSpring({
+        from: { x: 0 },
+        to: async (next) => {
+            if (isShaking) {
+                await next({ x: -5 });
+                await next({ x: 5 });
+                await next({ x: -5 });
+                await next({ x: 5 });
+                await next({ x: 0 });
+            }
+        },
+        config: { tension: 300, friction: 5 }, // Параметры для резкости и скорости
+        reset: true, // сбрасывает анимацию
+    });
+    const triggerShake = () => {
+        setIsShaking(true);
+        setTimeout(() => setIsShaking(false), 300); // Сбрасываем shaking через 300ms
+    };
+
+
     const checkRight = () => {
         if (!currentWord.length) return
         if (wordsArray[i].translate === currentWord) {
             btn.current.classList.remove('none')
             tween5.start()
             dispatch(addStreak())
-            i++
+            setI(i + 1)
         }
         else {
-            tween1.start()
+            triggerShake()
+            //tween1.start()
             dispatch(addError())
             dispatch(breakStreak())
         }
@@ -89,7 +117,7 @@ const WordFromPictureBoard = () => {
         if (i === 0) return false
         if (wordsArray.length)
             if (i === wordsArray.length) {
-                i = 0;
+                setI(0);
                 return true
             } else return false
 
@@ -97,32 +125,29 @@ const WordFromPictureBoard = () => {
     return (
         levelEnd() ? <LevelComplete /> :
             currentWordsArray.length > 0 ? (
-                <div ref={ref2} className="game-container">
-                    <WordFromPictureHeader />
-                    <section className="wfp-board">
-                        <div className="wpf__image">
-                            <img src={wordsArray[i].image} alt="" />
-                        </div>
-                        {wordsArray.length > 0 ? (
-                            <ul onClick={toggleChoice} className="wpf__choice">
-                                <li className="choice">{arrayToShow[0]?.translate}</li>
-                                <li className="choice">{arrayToShow[1]?.translate}</li>
-                                <li className="choice">{arrayToShow[2]?.translate}</li>
-                                <li className="choice">{arrayToShow[3]?.translate}</li>
-                                <li ref={ref3} className="next-btn">
-                                    <div ref={btn} className="btn__wrapper none">
-                                        <div className="wrapper__text">Верно!</div>
-                                        <button className="mainbtn special-btn">Далее</button>
-                                    </div>
+                <section className="wfp-board">
+                    <div className="wpf__image">
+                        <img src={wordsArray[i].image} alt="" />
+                    </div>
+                    {wordsArray.length > 0 ? (
+                        <ul onClick={toggleChoice} className="wpf__choice">
+                            <li className="choice">{arrayToShow[0]?.translate}</li>
+                            <li className="choice">{arrayToShow[1]?.translate}</li>
+                            <li className="choice">{arrayToShow[2]?.translate}</li>
+                            <li className="choice">{arrayToShow[3]?.translate}</li>
+                            <li ref={ref3} className="next-btn">
+                                <div ref={btn} className="btn__wrapper none">
+                                    <div className="wrapper__text">Верно!</div>
+                                    <button className="mainbtn special-btn">Далее</button>
+                                </div>
 
-                                </li>
-                            </ul>
-                        ) : (
-                            <p>Loading...</p>
-                        )}
-                        <button onClick={checkRight} className="mainbtn">Проверить</button>
-                    </section>
-                </div>
+                            </li>
+                        </ul>
+                    ) : (
+                        <p>Loading...</p>
+                    )}
+                    <button onClick={checkRight} className="mainbtn">Проверить</button>
+                </section>
             ) : (
                 <p>Loading...</p>
             )
