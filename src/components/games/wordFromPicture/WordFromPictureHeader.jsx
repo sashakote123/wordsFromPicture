@@ -25,7 +25,6 @@ const WordFromPictureHeader = () => {
         });
 
     const toggleMenu = () => {
-        console.log(window.innerWidth);
         const menu = document.querySelector('.menu__darkness')
         setIsOpen((prev) => !prev);
         menu?.classList.toggle('none')

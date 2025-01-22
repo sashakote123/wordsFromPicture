@@ -46,6 +46,9 @@
     font-size: 24px;
     line-height: 83%;
 
+    text-align: center;
+    word-break: break-word;
+
     color: #4b4b4b;
 }
 
@@ -68,27 +71,29 @@
 .btn__wrapper {
     position: relative;
     display: block;
-    //top: 0;
+    top: 10px;
     width: 100%;
     height: 150px;
     border-radius: 16px;
     //background-color: $main-green-color;
     background-color: #e7e1ef;
+    z-index: -2;
 }
 
 .wrapper__text {
     padding-left: 20px;
     padding-top: 20px;
+    padding-bottom: 20px;
     color: $sub-green-color;
     font-weight: 700;
     font-size: 26px;
     line-height: 119%;
 }
 
-.special-btn {
-    top: calc(100% - 101px);
+// .special-btn {
+//     top: calc(100% - 125px) !important;
 
-    &:focus {
-        top: calc(100% - 95px);
-    }
-}
+//     &:focus {
+//         top: calc(100% - 120px) !important;
+//     }
+// }

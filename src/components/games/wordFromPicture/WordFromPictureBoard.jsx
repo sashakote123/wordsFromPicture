@@ -2,18 +2,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { addError, clearErrors } from "../../../store/accuracySlice";
 import { addStreak, breakStreak } from "../../../store/streakSlice";
-import { generateArray, randomInteger, shuffleArray } from "../../../helpers/methods";
+import { generateArray, shuffleArray } from "../../../helpers/methods";
 import { updateCurrentWord } from "../../../store/initialShufflesSlice";
 import LevelComplete from "./../../common/LevelComplete";
 import KUTE from 'kute.js';
-import WordFromPictureHeader from "./WordFromPictureHeader";
 
 import { useSpring, animated } from "@react-spring/web";
 
 
 let tmpArray = [{ translate: null }, { translate: null }, { translate: null }, { translate: null },]
 
-let i = 0;
 
 
 const WordFromPictureBoard = () => {
@@ -40,6 +38,7 @@ const WordFromPictureBoard = () => {
     useEffect(() => {
         dispatch(breakStreak())
         dispatch(clearErrors())
+        setI(0)
     }, [])
 
 
@@ -61,15 +60,8 @@ const WordFromPictureBoard = () => {
 
     }
 
-    const ref2 = useRef()
-    let tween1 = KUTE.to(ref2.current, { translateX: -10 }, { duration: 30 });
-    let tween2 = KUTE.to(ref2.current, { translateX: 0 }, { duration: 30 });
-    let tween3 = KUTE.to(ref2.current, { translateX: 10 }, { duration: 30 });
-    let tween4 = KUTE.to(ref2.current, { translateX: 0 }, { duration: 30 });
-    tween1.chain(tween2)
-    tween2.chain(tween3)
-    tween3.chain(tween4)
 
+    
     const ref3 = useRef()
     var tween5 = KUTE.fromTo(ref3.current, { translate3d: [0, 250, 0] }, { translate3d: [0, 0, 0] }, { duration: 200 });
 
@@ -85,47 +77,53 @@ const WordFromPictureBoard = () => {
                 await next({ x: 5 });
                 await next({ x: -5 });
                 await next({ x: 5 });
-                await next({ x: 0 });
+                await next({ x: 0});
             }
         },
-        config: { tension: 300, friction: 5 }, // Параметры для резкости и скорости
-        reset: true, // сбрасывает анимацию
+        config: { tension: 500, friction: 5 }, // Параметры для резкости и скорости
+        //reset: true, // сбрасывает анимацию
     });
     const triggerShake = () => {
         setIsShaking(true);
-        setTimeout(() => setIsShaking(false), 300); // Сбрасываем shaking через 300ms
+        //setIsShaking(false)
+        setTimeout(() => setIsShaking(false), 500); // Сбрасываем shaking через 300ms
     };
 
 
     const checkRight = () => {
+        if (!currentWord) return
         if (!currentWord.length) return
         if (wordsArray[i].translate === currentWord) {
             btn.current.classList.remove('none')
             tween5.start()
-            dispatch(addStreak())
-            setI(i + 1)
+
         }
         else {
             triggerShake()
-            //tween1.start()
             dispatch(addError())
             dispatch(breakStreak())
         }
+    }
+
+    const nextWord = () => {
+        dispatch(addStreak())
+        setI(i + 1)
     }
 
     const levelEnd = () => {
         if (i === 0) return false
         if (wordsArray.length)
             if (i === wordsArray.length) {
-                setI(0);
                 return true
             } else return false
 
     }
+
+
     return (
         levelEnd() ? <LevelComplete /> :
             currentWordsArray.length > 0 ? (
-                <section className="wfp-board">
+                <animated.section className="wfp-board" style={{...shakeAnimation}}>
                     <div className="wpf__image">
                         <img src={wordsArray[i].image} alt="" />
                     </div>
@@ -138,7 +136,7 @@ const WordFromPictureBoard = () => {
                             <li ref={ref3} className="next-btn">
                                 <div ref={btn} className="btn__wrapper none">
                                     <div className="wrapper__text">Верно!</div>
-                                    <button className="mainbtn special-btn">Далее</button>
+                                    <button onClick={nextWord} className="mainbtn special-btn">Далее</button>
                                 </div>
 
                             </li>
@@ -147,7 +145,7 @@ const WordFromPictureBoard = () => {
                         <p>Loading...</p>
                     )}
                     <button onClick={checkRight} className="mainbtn">Проверить</button>
-                </section>
+                </animated.section>
             ) : (
                 <p>Loading...</p>
             )
